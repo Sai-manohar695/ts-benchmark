@@ -1,0 +1,30 @@
+datasets:
+  iowa_liquor_sales:
+    bq_table: "bigquery-public-data.iowa_liquor_sales.sales"
+    date_column: "date"
+    target_column: "sale_dollars"
+    aggregation: "SUM"
+    frequency: "W"
+    description: "Weekly liquor sales revenue"
+    seasonality_type: "linear"
+    min_history_weeks: 104
+
+  chicago_taxi_trips:
+    bq_table: "bigquery-public-data.chicago_taxi_trips.taxi_trips"
+    date_column: "trip_start_timestamp"
+    target_column: "trip_total"
+    aggregation: "COUNT"
+    frequency: "D"
+    description: "Daily taxi trip counts"
+    seasonality_type: "linear"
+    min_history_weeks: 104
+
+  nyc_citi_bike:
+    bq_table: "bigquery-public-data.new_york_citibike.citibike_trips"
+    date_column: "starttime"
+    target_column: "tripduration"
+    aggregation: "COUNT"
+    frequency: "D"
+    description: "Daily bike ride counts (2015-2018)"
+    seasonality_type: "nonlinear"
+    min_history_weeks: 104
